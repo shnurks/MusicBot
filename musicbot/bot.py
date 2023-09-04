@@ -3879,6 +3879,10 @@ class MusicBot(discord.Client):
         if (command == "vocaloid"):
             command = "play"
             args = ["https://www.youtube.com/playlist?list=PLyS5FOlp6-RNTzMUFebRNtU-nVOqQryv8"]
+        elif (command == "test"):
+            log.warning(
+                "test command successfull!"
+            )
         
         handler = getattr(self, "cmd_" + command, None)
         if not handler:
