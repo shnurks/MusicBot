@@ -3890,10 +3890,8 @@ class MusicBot(discord.Client):
             )
             
 
-        log.info(
-            log.info(command)
-            log.info(args)
-        )
+        log.info(command)
+        log.info(args)
         
         handler = getattr(self, "cmd_" + command, None)
         if not handler:
