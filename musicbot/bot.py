@@ -3887,6 +3887,14 @@ class MusicBot(discord.Client):
             log.info("loading vocaloid playlist...")
             command = "play"
             args = ["https://www.youtube.com/playlist?list=PLyS5FOlp6-RNTzMUFebRNtU-nVOqQryv8"]
+        elif (command == "kpop"):
+            log.info("loading vocaloid playlist...")
+            command = "play"
+            args = ["https://www.youtube.com/playlist?list=PLyS5FOlp6-RMCzH24GlFkvLYH_5aDpElh"]
+        elif (command == "eurobeat"):
+            log.info("loading vocaloid playlist...")
+            command = "play"
+            args = ["https://www.youtube.com/playlist?list=PLyS5FOlp6-RPo5X4mj7JcDJ0PSqdtgbUD"]
         elif (command == "loluet"):
             log.info("loading loluet playlist...")
             command = "play"
