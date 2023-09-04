@@ -3877,12 +3877,23 @@ class MusicBot(discord.Client):
         else:
             args = []
         if (command == "vocaloid"):
+            log.info("loading vocaloid playlist...")
             command = "play"
             args = ["https://www.youtube.com/playlist?list=PLyS5FOlp6-RNTzMUFebRNtU-nVOqQryv8"]
+        elif (command == "loluet"):
+            log.info("loading loluet playlist...")
+            command = "play"
+            args = ["https://www.youtube.com/playlist?list=PLQ4eIpo7ZyetRtzSpN9PXVYq8fNdinEhl"]
         elif (command == "test"):
             log.warning(
                 "test command successfull!"
             )
+            
+
+        log.info(
+            log.info(command)
+            log.info(args)
+        )
         
         handler = getattr(self, "cmd_" + command, None)
         if not handler:
