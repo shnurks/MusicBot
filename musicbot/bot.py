@@ -2145,12 +2145,6 @@ class MusicBot(discord.Client):
                 except:
                     traceback.print_exc()
 
-        if(playlist_url == "https://www.youtube.com/playlist?list=PLyS5FOlp6-RNTzMUFebRNtU-nVOqQryv8"):
-            player.playlist.shuffle()
-            log.info("shuffled2")
-        else:
-            log.info("2not the vocaloid playlist, but: " + playlist_url)
-
         return Response(reply_text, delete_after=30)
 
     async def _cmd_play_playlist_async(
@@ -2191,12 +2185,6 @@ class MusicBot(discord.Client):
                 )
                 # TODO: Add hook to be called after each song
                 # TODO: Add permissions
-                
-                if(playlist_url == "https://www.youtube.com/playlist?list=PLyS5FOlp6-RNTzMUFebRNtU-nVOqQryv8"):
-                    player.playlist.shuffle()
-                    log.info("shuffled")
-                else:
-                    log.info("not the vocaloid playlist, but: " + playlist_url)
 
             except Exception:
                 log.error("Error processing playlist", exc_info=True)
@@ -2207,6 +2195,13 @@ class MusicBot(discord.Client):
                     ).format(playlist_url),
                     expire_in=30,
                 )
+
+            log.info("here3")
+            if(playlist_url == "https://www.youtube.com/playlist?list=PLyS5FOlp6-RNTzMUFebRNtU-nVOqQryv8"):
+                player.playlist.shuffle()
+                log.info("3shuffled")
+            else:
+                log.info("3not the vocaloid playlist, but: " + playlist_url)
 
         elif extractor_type.lower() in ["soundcloud:set", "bandcamp:album"]:
             try:
