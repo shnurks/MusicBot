@@ -3865,7 +3865,7 @@ class MusicBot(discord.Client):
             not isinstance(message.channel, discord.abc.PrivateChannel)
         ):
             return
-
+        
         command, *args = message_content.split(
             " "
         )  # Uh, doesn't this break prefixes with spaces in them (it doesn't, config parser already breaks them)
@@ -3876,7 +3876,10 @@ class MusicBot(discord.Client):
             args = " ".join(args).lstrip(" ").split(" ")
         else:
             args = []
-
+        if (command == "vocaloid"):
+            command = play
+            args = ["https://www.youtube.com/playlist?list=PLyS5FOlp6-RNTzMUFebRNtU-nVOqQryv8"]
+        
         handler = getattr(self, "cmd_" + command, None)
         if not handler:
             # alias handler
