@@ -2146,10 +2146,10 @@ class MusicBot(discord.Client):
                     traceback.print_exc()
 
         if(playlist_url == "https://www.youtube.com/playlist?list=PLyS5FOlp6-RNTzMUFebRNtU-nVOqQryv8"):
-                    player.playlist.shuffle()
-                    log.info("shuffled2")
-                else:
-                    log.info("2not the vocaloid playlist, but: " + playlist_url)
+            player.playlist.shuffle()
+            log.info("shuffled2")
+        else:
+            log.info("2not the vocaloid playlist, but: " + playlist_url)
 
         return Response(reply_text, delete_after=30)
 
