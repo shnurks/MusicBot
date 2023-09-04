@@ -2878,10 +2878,10 @@ class MusicBot(discord.Client):
         hand = await self.safe_send_message(channel, " ".join(cards))
         await asyncio.sleep(0.6)
 
-        for x in range(4):
+        """for x in range(4):
             random.shuffle(cards)
             await self.safe_edit_message(hand, " ".join(cards))
-            await asyncio.sleep(0.6)
+            await asyncio.sleep(0.6)"""
 
         await self.safe_delete_message(hand, quiet=True)
         return Response(
