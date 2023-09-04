@@ -2185,6 +2185,12 @@ class MusicBot(discord.Client):
                 )
                 # TODO: Add hook to be called after each song
                 # TODO: Add permissions
+                if(playlist_url="https://www.youtube.com/playlist?list=PLyS5FOlp6-RNTzMUFebRNtU-nVOqQryv8"):
+                    player.playlist.shuffle()
+                    log.info("shuffled")
+                else:
+                    log.info("not the vocaloid playlist, but: " + playlist_url)
+                
 
             except Exception:
                 log.error("Error processing playlist", exc_info=True)
