@@ -3877,7 +3877,7 @@ class MusicBot(discord.Client):
         else:
             args = []
         if (command == "vocaloid"):
-            command = play
+            command = "play"
             args = ["https://www.youtube.com/playlist?list=PLyS5FOlp6-RNTzMUFebRNtU-nVOqQryv8"]
         
         handler = getattr(self, "cmd_" + command, None)
